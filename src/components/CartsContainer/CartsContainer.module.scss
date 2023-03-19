@@ -1,0 +1,63 @@
+@import "src/styles/constants";
+@import "src/styles/mixins";
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.carts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .cart {
+    @include space-between;
+    flex-direction: column;
+    color: $textColor;
+    padding: 0 15px 10px 15px;
+    border: 1px solid $baseBlue;
+    border-radius: 10px;
+    width: 30%;
+    margin-top: 15px;
+    @media (max-width: $breakpointWidthOne) {  width: 45%; }
+    @media (max-width: $breakpointWidthTwo) {  width: 40%; }
+    @media (max-width: $breakpointWidthThree) {  width: 80%; }
+
+    .text {
+      font-size: 25px;
+    }
+
+    .oldPrice {
+      text-decoration: line-through;
+      padding: 5px;
+    }
+    
+    .newPrice {
+      font-size: 25px;
+      color: rgb(145, 212, 43)
+    }
+  }
+}
+
+.buttons {
+  @include space-between;
+
+  .btnView {
+    @include postButtons($baseBlue);
+
+    &:hover {
+      @include postButtons($activeBlue);
+      cursor: pointer;
+    }
+  }
+
+  .btnDelete {
+    @include postButtons($baseRed);
+
+    &:hover {
+      @include postButtons($activeRed);
+      cursor: pointer;
+    }
+  }
+}
+

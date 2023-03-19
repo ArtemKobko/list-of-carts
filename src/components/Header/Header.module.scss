@@ -1,0 +1,32 @@
+@import "src/styles/constants";
+@import "src/styles/mixins";
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.headerContainer {
+  text-align: center;
+  background-color: $headerColor;
+  padding: 10px ;
+
+  .mainHeader {
+    font-size: 40px;
+    font-style: italic;
+    margin: 5px;
+  }
+
+  .createBtn {
+    @include createButton($baseBlue);
+    font-size: 22px;
+    @media (max-width: $breakpointWidthOne) {  width: 15%; }
+    @media (max-width: $breakpointWidthTwo) {  width: 20%; }
+    @media (max-width: $breakpointWidthFour) {  width: 40%; }
+
+    &:hover {
+      @include createButton($activeBlue);
+      cursor: pointer;
+      font-size: 22px;
+    }
+  }
+}

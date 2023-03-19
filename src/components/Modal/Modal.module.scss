@@ -1,0 +1,165 @@
+@import "src/styles/constants";
+@import "src/styles/mixins";
+
+.modal {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+ 
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; 
+    background-color: #fff;  
+    height: auto;
+    width: 450px;
+    margin: 50px auto;
+    border-radius: 10px;
+
+    .header {
+      text-align: center;
+      font-style: italic;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .userId {
+      @include input;
+      margin-left: 12px;      
+    } 
+
+    .items {
+      @include input;
+      width: 30%;
+      resize: none; 
+      margin-left: 12px; 
+      
+   }
+
+   .removeBtn {
+    @include postButtons($baseRed);
+    width: 5%;
+
+    &:hover {
+      @include postButtons($activeRed);
+      cursor: pointer;
+      width: 5%;
+    }
+  }
+   
+    .addBtn {
+      @include postButtons($baseBlue);
+  
+      &:hover {
+        @include postButtons($activeBlue);
+        cursor: pointer;
+      }
+    }   
+
+   .buttons {
+    @include space-between;
+  
+    .createBtn {
+      @include postButtons($baseBlue);
+  
+      &:hover {
+        @include postButtons($activeBlue);
+        cursor: pointer;
+      }
+    }
+  
+    .closeBtn {
+      @include postButtons($baseRed);
+  
+      &:hover {
+        @include postButtons($activeRed);
+        cursor: pointer;
+      }
+    }
+   }
+  }
+}
+
+.none {
+  display: none;
+}
+
+@media (max-width:$breakpointWidthThree) {
+
+  .modal{
+
+    .modalContent {
+      padding: 15px; 
+      height: auto;
+      width: auto;
+      margin: 50px 10px;
+    }
+  }  
+}
+
+@media (max-width:$breakpointWidthFour) {
+
+  .modal {
+
+    .modalContent {
+      padding: 10px;  
+      height: auto;
+      width: auto;
+      margin: 100px 10px;
+  
+      .header {
+        font-size: 25px;
+      }
+  
+      .postTitle {
+        @include input;
+        font-size: 22px;
+        margin-left: 12px;      
+      } 
+  
+      .postBody {
+        @include input;
+        resize: none; 
+        font-size: 22px;
+        margin-left: 12px; 
+      }
+    }
+  }  
+}
+
+@media (max-height: $breakpointHeigthOne) {
+
+  .modal{
+
+    .modalContent {
+      padding: 15px; 
+      height: 300px;
+      width: 390px;
+      margin: 10px auto;
+      border-radius: 10px;
+
+      .header {
+        margin-top: 0;
+        font-size: 25px;
+      }
+
+      .postTitle {
+        @include input;
+        font-size: 20px;
+        margin-left: 12px;      
+      } 
+  
+      .postBody {
+        @include input;
+        resize: none; 
+        font-size: 20px;
+        margin-left: 12px; 
+      }
+    }
+  }  
+}
