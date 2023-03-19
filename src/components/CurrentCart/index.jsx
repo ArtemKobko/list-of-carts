@@ -12,6 +12,7 @@ import {
 } from 'recharts';
 import { selectCarts } from '../../models/carts/selectors';
 import { fetchCarts } from '../../models/carts/middlewares';
+import styles from './CurrentCart.module.scss';
 
 function CurrentCart() {
   const dispatch = useDispatch();
@@ -58,7 +59,12 @@ function CurrentCart() {
     );
   }
   return (
-    <div> Sorry we can not find that cart</div>
+    <div>
+      {' '}
+      <p className={styles.error}>Sorry we can not find that cart</p>
+      {' '}
+      <a href="https://artemkobko.github.io/list-of-carts" className={styles.backBtn}>Back to main page</a>
+    </div>
   );
 }
 

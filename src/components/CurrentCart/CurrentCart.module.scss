@@ -1,0 +1,15 @@
+@import "src/styles/constants";
+
+.error {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 40px ;
+  color: $activeRed;
+}
+
+.backBtn {
+  margin: 30px;
+  color: $activeBlue;
+  text-decoration: none;
+  font-size: 30px;
+}
